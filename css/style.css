@@ -1,0 +1,283 @@
+:root {
+  --planta:#9bcc50;
+  --poison:#b97fc9;
+  --fogo:#fd7d24;
+  --agua: #4592c4;
+  --bug:#729f3f;
+  --normal: #a4acaf;
+  --flytng:#3dc7ef ;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url(../img/my-first-map-pallet-town-v0-24pkffupawbe1.webp) ;
+  background-repeat:no-repeat ;
+  background-size: cover;
+}
+
+ul {
+  list-style: none;
+}
+a {
+    text-decoration: none;
+    color: black;
+    transition: 0,3s;
+}
+
+a:hover {
+    color: #dbd804;
+}
+
+.logo {
+    width: 10%;
+    padding: 15px;
+}
+
+.navbar {
+  background-color: rgb(45, 30, 255);
+  padding: 3px 2.5rem;
+  border-bottom: 2px solid #dbd804;
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 2500px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  font-size: 25px;
+  display: flex;
+  gap: 50px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.name-pokedex {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.pokedex {
+  background-color: rgba(216, 213, 213, 0.4);
+  border-radius: 10px;
+  font-size: 60px;
+  padding: 10px;
+}
+
+.pokemons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+    width: 100%;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    overflow-y: scroll;
+    max-height: 1000px;
+    overscroll-behavior: contain;
+}
+
+.pokemons::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pokemons::-webkit-scrollbar-track {
+  background-color: #f1f1f1f1;
+}
+
+.pokemons::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 6px; 
+}
+
+.pokemons::-webkit-scrollbar-thumb:hover {
+  background: #555
+}
+
+.container {
+  background-color: rgba(216, 213, 213, 0.6);
+  width: 100%;
+  max-width: 90%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.img-pokemon {
+  max-width: 100%;
+  height: auto;
+  background-color: #d3d3d3;
+  border-radius: 8px;
+}
+
+.type-name {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 25px;
+}
+
+.container-pokemon {
+    padding: 50px;
+    padding-bottom: 15px;
+    margin: 50px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+div h2 {
+  text-align: center;
+  margin-top: -20px;
+  padding: 7px;
+}
+
+.type {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  gap: 15px;
+  font-size: 18px;
+}
+
+.planta {
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+  background-color: var(--planta);
+}
+
+.poison {
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+  background-color: var(--poison);
+}
+
+.fogo {
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+  background-color: var(--fogo);
+}
+
+.flytng {
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+  background-color: var(--flytng);
+}
+
+.agua {
+  padding: 5px 8px 5px 8px;
+  border-radius: 10px;
+  background-color: var(--agua);
+}
+
+.espaso {
+  padding: 10px;
+}
+
+.FM {
+  background-color: rgba(216, 213, 213, 0.4);
+  border-radius: 10px;
+  font-size: 40px;
+  padding: 10px;
+  width: 12%;
+  margin: 0 auto;
+}
+
+aside {
+  padding-top:10px ;
+  width: 5%;
+}
+
+.rank-pokemon {
+  background-color: rgba(216, 213, 213, 0.6);
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  width: 30%;
+  border-radius: 10px;
+  margin: auto  ;
+}
+
+.container-rank {
+  max-width: 20%;
+  padding: 1px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.container-rank p {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  padding: 5px;
+  border-top: 1px solid;
+}
+
+.rank-pokemon span {
+  position: relative;
+  bottom: 35px;
+  left: 126px;
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  padding: 10px;
+}
+
+.rank-name {
+  background-color: #fff;
+}
+
+.rank-img { 
+  width: 100%;
+  background-color:#fff ;
+}
+
+.primeiro {
+  border: 3px solid gold;
+  border-radius: 10px;
+}
+
+.segundo {
+  border: 3px solid silver;
+  border-radius: 10px;
+}
+
+.terceiro {
+  border: 3px solid #CD7F32;
+  border-radius: 10px;
+}
+
+p {
+  text-align: center;
+  font-size: 25px;
+}
+
+
+@media(max-width:450px) {
+
+  body{
+    background-position: center;
+  }
+
+  .logo {
+    width: 25%;
+  }
+
+  .nav-links {
+    font-size: 20px;
+    gap: 25px;
+  }
+}
