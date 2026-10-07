@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="script.js">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -16,57 +15,67 @@
             <div class="navbar-inner">
                 <img class="logo" src="img/logo.png" alt="logo">
                 <ul class="nav-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Favoritos</a></li>
+                    <button onclick="mudarPainel('containerHome', 'containerFavorite')" class="btn-home">Home</button>
+                    <button onclick="mudarPainel('containerFavorite', 'containerHome')" class="btn-fav">Favoritos</button>
                 </ul>
             </div>
         </nav>
     </header>
+    <div id="containerHome">
     <div class="espaso">
         <p class="FM">Favoritos do mundo</p>
     </div>
     <aside class="rank-pokemon">
-        <span>1º</span>
         <ul class="container-rank">
             <li class="primeiro">
+                <span>1º</span>
                 <img class="rank-img" src="img/Pikachu.png" alt="">
                 <p class="rank-name">Pikachu</p>
             </li>
         </ul>
-        <span>2º</span>
         <ul class="container-rank">
-
             <li class="segundo">
+                <span>2º</span>
                 <img class="rank-img" src="img/Charizard.png" alt="">
                 <p class="rank-name">Charizard</p>
             </li>
         </ul>
-        <span>3º</span>
         <ul class="container-rank">
             <li class="terceiro">
+                <span>3º</span>
                 <img class="rank-img"
                     src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/133.png" alt="">
                 <p class="rank-name">Eevee</p>
             </li>
         </ul>
     </aside>
-    <div class="name-pokedex">
-        <span class="pokedex">favoritos</span>
+    <div class="name-pokedex ">
+        <span class="pokedex">Pokedex</span>
     </div>
     <main class="main">
         <section class="container">
             <ul class="pokemons">
-                <li class="container-pokemon">
+                <li class="container-pokemon" id="card-pokemon">
                     <div>
                         <h2>Bulbasaur</h2>
                     </div>
                     <a href="">
-                        <img class="img-pokemon" src="img/bulbasaur.com" alt="Pokemons">
+                        <img class="img-pokemon" src="img/Bulbasaur.png" alt="Pokemons">
                     </a>
                     <span class="type-name">Tipo</span>
                     <div class="type">
-                        <span class="planta">planta</span>
+                        <span class="planta">Planta</span>
                         <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="1"
+                        data-name="Bulbasaur"
+                        data-image="img/Bulbasaur.png"
+                        data-type1="Planta"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                    </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
@@ -78,8 +87,18 @@
                     </a>
                     <span class="type-name">Tipo</span>
                     <div class="type">
-                        <span class="planta">planta</span>
+                        <span class="planta">Planta</span>
                         <span class="poison">Poison</span>
+                    </div>
+                   <div class="div-btn">
+                        <button class="favorite"
+                        data-id="2"
+                        data-name="Ivysaur"
+                        data-image="img/Ivysaur.png"
+                        data-type1="Planta"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                    </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
@@ -91,8 +110,18 @@
                     </a>
                     <span class="type-name">Tipo</span>
                     <div class="type">
-                        <span class="planta">planta</span>
+                        <span class="planta">Planta</span>
                         <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="3"
+                        data-name="Venusaur"
+                        data-image="img/Venusaur.png"
+                        data-type1="Planta"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                    </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
@@ -106,6 +135,16 @@
                     <div class="type">
                         <span class="fogo">Fogo</span>
                     </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="4"
+                        data-name="Charmander"
+                        data-image="img/Charmander.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
                 </li>
                 <li class="container-pokemon">
                     <div>
@@ -118,10 +157,20 @@
                     <div class="type">
                         <span class="fogo">Fogo</span>
                     </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="5"
+                        data-name="Charmeleon"
+                        data-image="img/Charmeleon.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                    </button>
+                    </div>
                 </li>
-                <li class="container-pokemon">
+                <li class="container-pokemon" id="card-pokemon">
                     <div>
-                        <h2>Bulbasaur</h2>
+                        <h2>Charizard</h2>
                     </div>
                     <a href="">
                         <img class="img-pokemon" src="img/Charizard.png" alt="Pokemons">
@@ -129,7 +178,17 @@
                     <span class="type-name">Tipo</span>
                     <div class="type">
                         <span class="fogo">Fogo</span>
-                        <span class="flytng">Flytng</span>
+                        <span class="flying">Flytng</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="6"
+                        data-name="Charizard"
+                        data-image="img/Charizard.png"
+                        data-type1="Fogo"
+                        data-type2="Flytng">
+                    Adicionar aos favoritos
+                        </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
@@ -143,6 +202,16 @@
                     <div class="type">
                         <span class="agua">água</span>
                     </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="7"
+                        data-name="Squirtle"
+                        data-image="img/Squirtle.png"
+                        data-type1="Agua"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                        </button>
+                    </div>
                 </li>
                 <li class="container-pokemon">
                     <div>
@@ -154,6 +223,16 @@
                     <span class="type-name">Tipo</span>
                     <div class="type">
                         <span class="agua">água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="8"
+                        data-name="Wartortle"
+                        data-image="img/Wartortle.png"
+                        data-type1="Agua"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                        </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
@@ -167,58 +246,1416 @@
                     <div class="type">
                         <span class="agua">água</span>
                     </div>
-                </li>
-                <li class="container-pokemon">
-                    <div>
-                        <h2>Bulbasaur</h2>
-                    </div>
-                    <a href="">
-                        <img class="img-pokemon" src="img/bulbasaur.com" alt="Pokemons">
-                    </a>
-                    <span class="type-name">Tipo</span>
-                    <div class="type">
-                        <span class="planta">planta</span>
-                        <span class="poison">Poison</span>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="9"
+                        data-name="Blastoise"
+                        data-image="img/Blastoise.png"
+                        data-type1="Agua"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
                     </div>
                 </li>
                 <li class="container-pokemon">
                     <div>
-                        <h2>Bulbasaur</h2>
+                        <h2>Caterpie</h2>
                     </div>
                     <a href="">
-                        <img class="img-pokemon" src="img/bulbasaur.com" alt="Pokemons">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/010.png" alt="Pokemons">
                     </a>
                     <span class="type-name">Tipo</span>
                     <div class="type">
-                        <span class="planta">planta</span>
+                        <span class="bug">bug</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="10"
+                        data-name="Caterpie"
+                        data-image="ihttps://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/010.png"
+                        data-type1="Bug"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Metapod</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/011.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="11"
+                        data-name="Metapod"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/011.png"
+                        data-type1="Bug"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Butterfree</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="img/012.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="12"
+                        data-name="Butterfree"
+                        data-image="img/012.png"
+                        data-type1="Bug"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Weedle</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/013.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
                         <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="13"
+                        data-name="Weedle"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/013.png"
+                        data-type1="Bug"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Kakuna</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/014.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="14"
+                        data-name="Kakuna"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/014.png"
+                        data-type1="bug"
+                        data-type2="poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Bredrill</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/015.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="15"
+                        data-name="Bredrill"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/015.png"
+                        data-type1="bug"
+                        data-type2="poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Pidgey</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/016.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="16"
+                        data-name="Pidgey"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/016.png"
+                        data-type1="Normal"
+                        data-type2="flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Pidgeot</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/018.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="18"
+                        data-name="Pidgeot"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/018.png"
+                        data-type1="Normal"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Rattata</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/019.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="19"
+                        data-name="Rattata"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/019.png"
+                        data-type1="Normal"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Raticate</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/020.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="20"
+                        data-name="Raticate"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/020.png"
+                        data-type1="Normal"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Spearow</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/021.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="21"
+                        data-name="Spearow"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/021.png"
+                        data-type1="Normal"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Fearow</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/022.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="22"
+                        data-name="Fearow"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/022.png"
+                        data-type1="Normal"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Ekans</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/023.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="23"
+                        data-name="Ekans"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/023.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Arbok</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/024.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="24"
+                        data-name="Arbok"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/024.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Pikachu</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="electric">Electric</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="25"
+                        data-name="Pikachu"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/025.png"
+                        data-type1="Electric"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Raichu</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/026.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="electric">Electric</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="26"
+                        data-name="Raichu"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/026.png"
+                        data-type1="Electric"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Sandshrew</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/027.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="27"
+                        data-name="Sandshrew"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/027.png"
+                        data-type1="Ground"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Sandslash</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/028.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="28"
+                        data-name="Sandslash"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/028.png"
+                        data-type1="Ground"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidoran ♀</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/029.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="29"
+                        data-name="Nidoran ♀"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/029.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidorina</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/030.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="30"
+                        data-name="Nidorina"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/030.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidoqueen</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/031.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="31"
+                        data-name="Nidoqueen"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/031.png"
+                        data-type1="Poison"
+                        data-type2="Ground">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidoran ♂</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/029.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="29"
+                        data-name="Nidoran ♂"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/029.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidorino</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/030.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="30"
+                        data-name="Nidorino"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/030.png"
+                        data-type1="Poison"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Nidoking</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/034.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="34"
+                        data-name="Nidoking"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/034.png"
+                        data-type1="Poison"
+                        data-type2="Ground">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Clefairy</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/035.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fada">Fada</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="35"
+                        data-name="Clefairy"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/035.png"
+                        data-type1="Fada"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Clefable</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/036.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fada">Fada</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="36"
+                        data-name="Clefable"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/036.png"
+                        data-type1="Fada"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Vulpix</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/037.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fogo">Fogo</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="37"
+                        data-name="Vulpix"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/037.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Ninetales</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/038.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fogo">Fogo</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="38"
+                        data-name="Ninetales"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/038.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>jigglypuff</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/039.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="fada">Fada</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="39"
+                        data-name="jigglypuff"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/039.png"
+                        data-type1="Normal"
+                        data-type2="Fada">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Wigglytuff</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/040.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                        <span class="fada">Fada</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="40"
+                        data-name="Wigglytuff"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/040.png"
+                        data-type1="Normal"
+                        data-type2="Fada">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Zubat</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/041.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="41"
+                        data-name="Zubat"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/041.png"
+                        data-type1="Poison"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Golbat</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/042.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="flying">Flying</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="42"
+                        data-name="Golbat"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/042.png"
+                        data-type1="Poison"
+                        data-type2="Flying">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Oddish</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/043.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="planta">Planta</span>
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="43"
+                        data-name="Oddish"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/043.png"
+                        data-type1="Planta"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Gloom</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/044.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="planta">Planta</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="44"
+                        data-name="Gloom"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/044.png"
+                        data-type1="Poison"
+                        data-type2="Planta">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Vileplume</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/045.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="poison">Poison</span>
+                        <span class="planta">Planta</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="45"
+                        data-name="Vileplume"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/045.png"
+                        data-type1="Poison"
+                        data-type2="Planta">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Paras</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/046.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="planta">Planta</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="46"
+                        data-name="Paras"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/046.png"
+                        data-type1="Bug"
+                        data-type2="Planta">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Parasect</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/047.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="planta">Planta</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="47"
+                        data-name="Parasect"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/047.png"
+                        data-type1="Bug"
+                        data-type2="Planta">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Venonat</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/048.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="48"
+                        data-name="Venonat"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/048.png"
+                        data-type1="Bug"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Venomoth</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/049.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="bug">Bug</span>
+                        <span class="poison">Poison</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="49"
+                        data-name="Venomoth"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/049.png"
+                        data-type1="Bug"
+                        data-type2="Poison">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Diglett</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/050.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="50"
+                        data-name="Diglett"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/050.png"
+                        data-type1="Ground"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Dugtrio</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/051.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="ground">Ground</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="51"
+                        data-name="Dugtrio"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/051.png"
+                        data-type1="Ground"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Meowth</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/052.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="52"
+                        data-name="Meowth"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/052.png"
+                        data-type1="Normal"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Persian</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/053.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="normal">Normal</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="53"
+                        data-name="Persian"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/053.png"
+                        data-type1="Normal"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Psyduck</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/054.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Agua</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="54"
+                        data-name="Psyduck"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/054.png"
+                        data-type1="Agua"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Golduck</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/055.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Agua</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="55"
+                        data-name="Golduck"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/055.png"
+                        data-type1="Agua"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Mankey</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/056.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="lutador">Lutador</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="56"
+                        data-name="Mankey"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/056.png"
+                        data-type1="Lutador"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Primeape</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/057.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="lutador">Lutador</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="57"
+                        data-name="Primeape"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/057.png"
+                        data-type1="Lutador"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Growlithe</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/058.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fogo">Fogo</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="58"
+                        data-name="Growlithe"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/058.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Arcanine</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/059.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="fogo">Fogo</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="59"
+                        data-name="Arcanine"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/059.png"
+                        data-type1="Fogo"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwag</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/060.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="60"
+                        data-name="Poliwag"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/060.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwrath</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/062.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                        <span class="lutador">Lutador</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="62"
+                        data-name="Poliwrath"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/062.png"
+                        data-type1="Água"
+                        data-type2="Lutador">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Abra</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/063.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="psychic">Psíquico</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="63"
+                        data-name="Abra"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/063.png"
+                        data-type1="Psíquico"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Kadabra</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/064.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="psychic">Psíquico</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="64"
+                        data-name="Kadabra"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/064.png"
+                        data-type1="Psíquico"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Alakazam</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/065.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="psychic">Psíquico</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="65"
+                        data-name="Alakazam"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/065.png"
+                        data-type1="Psíquico"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
+                    </div>
+                </li>
+                 <li class="container-pokemon">
+                    <div>
+                        <h2>Poliwhirl</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png" alt="Pokemons">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="agua">Água</span>
+                    </div>
+                    <div class="div-btn">
+                        <button class="favorite"
+                        data-id="61"
+                        data-name="Poliwhirl"
+                        data-image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/061.png"
+                        data-type1="Água"
+                        data-type2="null">
+                    Adicionar aos favoritos
+                            </button>
                     </div>
                 </li>
             </ul>
         </section>
     </main>
-    <div class="name-pokedex">
-        <span class="pokedex">Pokedex</span>
     </div>
-    <main class="main">
-        <section class="container">
-            <ul class="pokemons">
-                <li class="container-pokemon">
-                    <div>
-                        <h2>Bulbasaur</h2>
-                    </div>
-                    <a href="">
-                        <img class="img-pokemon" src="img/bulbasaur.com" alt="Pokemons">
-                    </a>
-                    <span class="type-name">Tipo</span>
-                    <div class="type">
-                        <span class="planta">planta</span>
-                        <span class="poison">Poison</span>
-                    </div>
-                </li>
-            </ul>
+    <div id="containerFavorite" class="hide">
+    <div class="name-pokedex">
+        <span class="pokedex">Favoritos</span>
+    </div>
+    <main class="main-favorite">
+        <section class="container-favorite" id="container-favorite">
         </section>
     </main>
+    </div>
 </body>
 
 </html>

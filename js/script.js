@@ -1,47 +1,145 @@
-const urlBase = 'https://pokeapi.co/api/v2/pokemon';
-const pokedexContainer = document.getElementById('pokedex1');
+function mudarPainel(containerHome, containerFavorite) {
+    document.getElementById(containerFavorite).classList.add('hide');
+    
+    document.getElementById(containerHome).classList.remove('hide');
+  }
 
-// 1. Buscar a lista inicial de Pokémons (ex: 15 primeiros)
-async function carregarPokemons() {
-    try {
-        const response = await fetch(`${urlBase}?limit=15&offset=0`);
-        const data = await response.json();
-        
-        // Data.results contém uma lista de objetos com name e url
-        // Usamos forEach para iterar pela lista
-        data.results.forEach(pokemon => {
-            buscarDetalhesPokemon(pokemon.url);
-        });
-    } catch (error) {
-        console.error('Erro ao carregar a lista:', error);
+const btnFavorite = document.querySelectorAll(".favorite");
+
+btnFavorite.forEach((btnFavorite) => {
+
+const pokemonEdicao = {
+    id: btnFavorite.getAttribute("data-id"),
+    name: btnFavorite.getAttribute("data-name"),
+    image: btnFavorite.getAttribute("data-image"),
+    type1: btnFavorite.getAttribute("data-type1"),
+    type2: btnFavorite.getAttribute("data-type2")
+  };
+
+let pokemonsFavoritos =  JSON.parse(localStorage.getItem("pokemonsFavoritos")) || [];
+
+const jaEfavorito = pokemonsFavoritos.some(pokemon => pokemon.name === pokemonEdicao.name);
+// const textPadrao = 'Adicionar aos favoritos';
+// const newText = '⭐ Pokémon Favoritado!'
+
+if (jaEfavorito) {
+  btnFavorite.classList.add("favorito");
+  btnFavorite.innerText = "⭐ Pokémon Favoritado!";
+}
+
+// btnFavorite.addEventListener("click",function() {
+//     btnFavorite.textContent = newText
+
+//     setTimeout(function() {
+//       btnFavorite.textContent = textPadrao;
+//     }, 1000)
+//   })
+
+btnFavorite.addEventListener("click", () => {
+  pokemonsFavoritos = JSON.parse(localStorage.getItem("pokemonsFavoritos")) || [];
+
+  const index = pokemonsFavoritos.findIndex(pokemon => pokemon.name === pokemonEdicao.name);
+
+  if (index !== -1) {
+    pokemonsFavoritos.splice(index, 1);
+    btnFavorite.classList.remove("favorito");
+    btnFavorite.innerText = "Adicionar aos favoritos";
+  } else {
+    pokemonsFavoritos.push(pokemonEdicao);
+    btnFavorite.classList.add("favorito");
+    btnFavorite.innerText = "⭐ Pokémon Favoritado!";
+  }
+
+localStorage.setItem("pokemonsFavoritos", JSON.stringify(pokemonsFavoritos));
+
+
+if (typeof renderizarFavoritos === "function") {
+      renderizarFavoritos();
     }
-}
+})
+})
 
-// 2. Buscar os dados detalhados de cada Pokémon (imagem, nome, etc)
-async function buscarDetalhesPokemon(url) {
-    try {
-        const response = await fetch(url);
-        const pokemon = await response.json();
-        
-        criarCardPokemon(pokemon);
-    } catch (error) {
-        console.error('Erro ao buscar detalhes:', error);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const containerList = document.getElementById("container-favorite");
+
+  window.renderizarFavoritos = function() {
+    if (!containerLista) return;
+   }
+
+  function renderizarFavoritos() {
+
+    const pokemonsFavoritos = JSON.parse(localStorage.getItem("pokemonsFavoritos")) || [];
+
+    containerList.innerHTML = "";
+
+    if (pokemonsFavoritos.length === 0) {
+      containerLista.innerHTML = "<p>Nenhum Pokémon favoritado ainda. Vá capturar alguns!</p>";
+      return;
     }
-}
 
-// 3. Criar o HTML para exibir na tela
-function criarCardPokemon(poke) {
-    const card = document.createElement('pokedex1');
-    card.classList.add('card');
+    pokemonsFavoritos.forEach(pokemon => {
+      const tagType2 = pokemon.type2 && pokemon.type2 !== "null" ? `<span class="${pokemon.type2}">${pokemon.type2}</span>` : '';
+      const cardHTML = `
+       
+        <li class="container-pokemon" data-id="${pokemon.id}">
+                    <div>
+                        <h2>${pokemon.name}</h2>
+                    </div>
+                    <a href="">
+                        <img class="img-pokemon" src="${pokemon.image}" alt="${pokemon.name}">
+                    </a>
+                    <span class="type-name">Tipo</span>
+                    <div class="type">
+                        <span class="${pokemon.type1}">${pokemon.type1}</span>
+                        ${tagType2}
+                    </div>
+                    <div class="div-btn">
+                        <button class="btn-remover" data-id="${pokemon.id}">💔 Remover</button>
+                    </div>
+                </li>
+      `;
+      
+      containerList.innerHTML += cardHTML;
+    });
 
-    card.innerHTML = `
-        <img src="${poke.sprites.front_default}" alt="${poke.name}">
-        <h3>${poke.name}</h3>
-        <p>ID: ${poke.id}</p>
-    `;
+    configurarBotoesRemover();
+  }
 
-    pokedexContainer.appendChild(card);
-}
+  function configurarBotoesRemover() {
+    const btnRemover = document.querySelectorAll(".btn-remover");
 
-// Inicializar a função
-carregarPokemons();
+    btnRemover.forEach(botao => {
+      botao.addEventListener("click", (evento) => {
+        const idParaRemover = evento.target.getAttribute("data-id");
+        
+        let pokemonsFavoritos = JSON.parse(localStorage.getItem("pokemonsFavoritos")) || [];
+        
+        pokemonsFavoritos = pokemonsFavoritos.filter(poke => poke.id !== idParaRemover);
+        
+        localStorage.setItem("pokemonsFavoritos", JSON.stringify(pokemonsFavoritos));
+        
+        renderizarFavoritos();
+        atualizarBtnPrincipal()
+      });
+    });
+  }
+
+  function atualizarBtnPrincipal() {
+    const pokemonsFavoritos = JSON.parse(localStorage.getItem("pokemonsFavoritos"))||[];
+    btnFavorite.forEach(btn => {
+      const name = btn.getAttribute("data-name");
+      const jaEfavoritos = pokemonsFavoritos.some(pokemon => pokemon.name === name)
+
+      if(jaEfavoritos) {
+        btn.classList.add("favorito");
+        btn.innerText = "⭐ Pokémon Favoritado!"
+      } else {
+        btn.classList.remove("favorito");
+        btn.innerText = "Adicionar aos favoritos"
+      }
+    })
+  }
+
+  renderizarFavoritos();
+});
