@@ -1,16 +1,21 @@
 :root {
-  --planta:#9bcc50;
+  --glass:#9bcc50;
   --poison:#b97fc9;
-  --fogo:#fd7d24;
-  --agua: #4592c4;
+  --fire:#fd7d24;
+  --water: #4592c4;
   --bug:#729f3f;
   --normal: #a4acaf;
   --flying:#3dc7ef ;
   --electric:#eed535;
   --ground:#ab9842;
-  --fada:#fdb9e9;
-  --lutador:#d56723;
+  --fairy:#fdb9e9;
+  --fighter:#d56723;
   --psychic:#f366b9;
+  --rock: #a38c21;
+  --steel:#9eb7b8;
+  --ice: #51c4e7;
+  --ghost: #7b62a3;
+  --dragon: #f16e57;
 }
 
 * {
@@ -191,24 +196,24 @@ div h2 {
   border-radius: 10px;
 }
 
-.planta, .Planta {
-  background-color: var(--planta);
+.glass, .Glass {
+  background-color: var(--glass);
 }
 
 .poison, .Poison {
   background-color: var(--poison);
 }
 
-.fogo, .Fogo {
-  background-color: var(--fogo);
+.fire, .Fire {
+  background-color: var(--fire);
 }
 
 .flying, .Flying {
   background-color: var(--flying);
 }
 
-.agua, .Agua {
-  background-color: var(--agua);
+.water, .Water {
+  background-color: var(--water);
 }
 
 .bug, .Bug {
@@ -227,16 +232,37 @@ div h2 {
   background-color: var(--ground);
 }
 
-.fada, .Fada {
-  background-color: var(--fada);
+.fairy, .Fairy {
+  background-color: var(--fairy);
 }
 
-.lutador, .Lutador {
-  background-color: var(--lutador);
+
+.fighter, .Fighter {
+  background-color: var(--fighter);
 }
 
 .psychic, .Psychic {
   background-color: var(--psychic);
+}
+
+.rock, .Rock {
+  background-color: var(--rock);
+}
+
+.steel, .Steel {
+  background-color: var(--steel);
+}
+
+.ice , .Ice {
+  background-color: var(--ice);
+}
+
+.ghost , .Ghost {
+  background-color: var(--ghost);
+}
+
+.dragon , .Dragon {
+  background-color: var(--dragon);
 }
 
 .espaso {
